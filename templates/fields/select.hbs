@@ -2,7 +2,7 @@
       choices: [{value: "aaa", localData: {foo: "bar"}, localKey: "A Different Key"}] --}}
 {{#*inline "singleChoice"}}
     {{#selectOption choice}}
-        <option value="{{value}}" {{!-- Select current value --}}
+        <option class="sheet-option" value="{{value}}" {{!-- Select current value --}}
         {{~#if (equals (deepLookup .. ../edit) value)}}
         selected
         {{~/if}}>
@@ -22,7 +22,7 @@
     <span class="flex-pad"></span>
     <select name="{{edit}}">
         {{#if allowBlank}}
-            <option value="" {{#if (equals (deepLookup . edit) "")}}selected{{/if}}></option>
+            <option class="sheet-option" value="" {{#if (equals (deepLookup . edit) "")}}selected{{/if}}></option>
         {{/if}}
 
         {{#each choices as |choice|}}

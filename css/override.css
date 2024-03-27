@@ -17,3 +17,19 @@
 	font-weight: bold;
 	border: 0 none;
 }
+
+.sheet-option {
+	background: black;
+}
+  
+.wound-tracker .filled {
+	background-color: #fa0000;
+}
+
+.field.skill .chip-icon {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(74%) saturate(6979%) hue-rotate(356deg) brightness(91%) contrast(117%);
+}
+
+.field.skill .chip-icon.inactive {
+    filter: opacity(0.75);
+}
