@@ -234,7 +234,7 @@ export class CyberpunkActor extends Actor {
     roll.defaultExecute(speaker);
   }
 
-  rollSkill(speaker, statName) {
+  rollStat(speaker, statName) {
     let fullStatName = localize(properCase(statName) + "Full");
     let roll = new Multiroll(fullStatName);
     roll.addRoll(makeD10Roll(
