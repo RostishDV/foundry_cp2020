@@ -168,7 +168,8 @@ export class CyberpunkActorSheet extends ActorSheet {
 
     html.find('.stat-roll').click(ev => {
       let statName = ev.currentTarget.dataset.statName;
-      this.actor.rollStat(statName);
+      let speaker = ChatMessage.getSpeaker({ actor: this.actor });
+      this.actor.rollStat(speaker, statName);
     });
     // TODO: Refactor these skill interactivity stuff into their own methods
     html.find(".skill-level").click((event) => event.target.select()).change((event) => {
@@ -193,7 +194,8 @@ export class CyberpunkActorSheet extends ActorSheet {
     });
     html.find(".skill-roll").click(ev => {
       let id = ev.currentTarget.dataset.skillId;
-      this.actor.rollSkill(id);
+      let speaker = ChatMessage.getSpeaker({ actor: this.actor });
+      this.actor.rollSkill(speaker,id);
     });
     html.find(".roll-initiative").click(ev => {
       this.actor.addToCombatAndRollInitiative();

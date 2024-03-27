@@ -212,7 +212,7 @@ export class CyberpunkActor extends Actor {
     return CyberpunkActor.realSkillValue(this.itemTypes.skill.find(skill => skill.name === skillName));
   }
 
-  rollSkill(skillId) {
+  rollSkill(speaker, skillId) {
     let skill = this.items.get(skillId);
     let skillData = skill.system;
     let value = CyberpunkActor.realSkillValue(skill);
@@ -231,17 +231,17 @@ export class CyberpunkActor extends Actor {
     let roll = new Multiroll(skill.name)
       .addRoll(makeD10Roll(rollParts, this.system));
 
-    roll.defaultExecute();
+    roll.defaultExecute(speaker);
   }
 
-  rollStat(statName) {
+  rollSkill(speaker, statName) {
     let fullStatName = localize(properCase(statName) + "Full");
     let roll = new Multiroll(fullStatName);
     roll.addRoll(makeD10Roll(
       [`@stats.${statName}.total`],
       this.system
     ));
-    roll.defaultExecute();
+    roll.defaultExecute(speaker);
   }
 
   /*

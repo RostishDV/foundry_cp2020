@@ -151,8 +151,8 @@ export function classifyRollDice(roll) {
         return this;
     }
 
-    async defaultExecute(extraTemplateData={}) {
-        return this.execute(undefined, DefaultRollTemplate, extraTemplateData);
+    async defaultExecute(speaker = undefined, extraTemplateData={}) {
+        return this.execute(speaker, DefaultRollTemplate, extraTemplateData);
     }
 }
 
