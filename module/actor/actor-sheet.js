@@ -131,6 +131,7 @@ export class CyberpunkActorSheet extends ActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
+    let speaker = ChatMessage.getSpeaker({ actor: this.actor });
 
     /**
    * Get an owned item from a click event, for any event trigger with a data-item-id property
@@ -168,7 +169,6 @@ export class CyberpunkActorSheet extends ActorSheet {
 
     html.find('.stat-roll').click(ev => {
       let statName = ev.currentTarget.dataset.statName;
-      let speaker = ChatMessage.getSpeaker({ actor: this.actor });
       this.actor.rollStat(speaker, statName);
     });
     // TODO: Refactor these skill interactivity stuff into their own methods
@@ -194,7 +194,6 @@ export class CyberpunkActorSheet extends ActorSheet {
     });
     html.find(".skill-roll").click(ev => {
       let id = ev.currentTarget.dataset.skillId;
-      let speaker = ChatMessage.getSpeaker({ actor: this.actor });
       this.actor.rollSkill(speaker,id);
     });
     html.find(".roll-initiative").click(ev => {

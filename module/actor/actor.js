@@ -271,6 +271,6 @@ export class CyberpunkActor extends Actor {
     rolls.addRoll(new Roll(`${this.deathThreshold()}`), {
       name: "Death Threshold"
     });
-    rolls.defaultExecute();
+    rolls.defaultExecute(ChatMessage.getSpeaker({ actor: this.actor }));
   }
 }

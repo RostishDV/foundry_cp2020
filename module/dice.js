@@ -152,7 +152,7 @@ export function classifyRollDice(roll) {
     }
 
     async defaultExecute(speaker = undefined, extraTemplateData={}) {
-        return this.execute(speaker, DefaultRollTemplate, extraTemplateData);
+        return this.execute((speaker ? speaker : ChatMessage.getSpeaker({ actor: this.actor })), DefaultRollTemplate, extraTemplateData);
     }
 }
 

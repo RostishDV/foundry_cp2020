@@ -305,7 +305,7 @@ export class CyberpunkItem extends Item {
       }
     }
     let roll = new Multiroll(localize("Autofire"), `${localize("Range")}: ${localizeParam(attackMods.range, {range: actualRangeBracket})}`);
-    roll.execute(undefined, "systems/cyberpunk2020/templates/chat/multi-hit.hbs", templateData);
+    roll.execute(ChatMessage.getSpeaker({ actor: this.actor }), "systems/cyberpunk2020/templates/chat/multi-hit.hbs", templateData);
     return roll;
   }
 
@@ -345,7 +345,7 @@ export class CyberpunkItem extends Item {
       }
     }
     let roll = new Multiroll(localize("ThreeRoundBurst"));
-    roll.execute(undefined, "systems/cyberpunk2020/templates/chat/multi-hit.hbs", templateData);
+    roll.execute(ChatMessage.getSpeaker({ actor: this.actor }), "systems/cyberpunk2020/templates/chat/multi-hit.hbs", templateData);
   }
 
   async __semiAuto(attackMods) {
@@ -361,7 +361,7 @@ export class CyberpunkItem extends Item {
       .addRoll(damageRoll, {name: localize("Damage")})
       .addRoll(locationRoll.roll, {name: localize("Location"), flavor: locationRoll.areaHit })
       .addRoll(locationRoll.subRoll, {name: "Sub location", flavor: locationRoll.subArea });
-    bigRoll.defaultExecute({img:this.img});
+    bigRoll.defaultExecute(ChatMessage.getSpeaker({ actor: this.actor }), {img:this.img});
     return bigRoll;
   }
   async __meleeBonk(attackMods) {
@@ -376,7 +376,7 @@ export class CyberpunkItem extends Item {
       .addRoll(attackRoll, {name: localize("Attack")})
       .addRoll(damageRoll, {name: localize("Damage")})
       .addRoll(locationRoll.roll, {name: localize("Location"), flavor: locationRoll.areaHit });
-    bigRoll.defaultExecute({img:this.img});
+    bigRoll.defaultExecute(ChatMessage.getSpeaker({ actor: this.actor }), {img:this.img});
     return bigRoll;
   }
   async __martialBonk(attackMods) {
@@ -421,7 +421,7 @@ export class CyberpunkItem extends Item {
         martialDamageBonus: isMartial ? martialSkillLevel : 0
       }), {name: localize("Damage")});
     }
-    results.defaultExecute({img: this.img});
+    results.defaultExecute(ChatMessage.getSpeaker({ actor: this.actor }), {img: this.img});
     return results;
   }
 
