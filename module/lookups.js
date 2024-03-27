@@ -133,52 +133,52 @@ export { rangeDCs, rangeResolve }
 export let defaultTargetLocations = ["Head", "Torso", "lArm", "rArm", "lLeg", "rLeg"]
 export let subAreas = {
     "Head": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
+        1: "Skull",
+        2: "R/L Cheek/Back of skull",
+        3: "R/L Eye/Ear",
+        4: "Nose/Back of skull",
+        5: "Mouth/Back of skull",
+        6: "Neck"
     },
     "Torso": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
+        1: "Neckline",
+        2: "Chest/Upper Back",
+        3: "Sternum/Spine",
+        4: "Ribs",
+        5: "Stomach/Lower back",
+        6: "Groin"
     },
     "lArm": {
         1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
+        2: "Upper arm",
+        3: "Elbow",
+        4: "Forearm",
+        5: "Wirst",
+        6: "Hand"
     },
     "rArm": {
         1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
+        2: "Upper arm",
+        3: "Elbow",
+        4: "Forearm",
+        5: "Wirst",
+        6: "Hand"
     },
     "lLeg": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
+        1: "Hip",
+        2: "Thigh",
+        3: "Knee",
+        4: "Calf/Shin",
+        5: "Ankle",
+        6: "Foot"
     },
     "rLeg": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
+        1: "Hip",
+        2: "Thigh",
+        3: "Knee",
+        4: "Calf/Shin",
+        5: "Ankle",
+        6: "Foot"
     }
 }
 export let defaultAreaLookup = {

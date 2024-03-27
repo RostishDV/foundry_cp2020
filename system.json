@@ -1,8 +1,8 @@
 {
   "name": "cyberpunk2020",
-  "title": "Cyberpunk 2020",
+  "title": "Cyberpunk 2020 UPG",
   "description": "R. Talsorian Games' Cyberpunk 2020 System",
-  "version": "0.3.8",
+  "version": "0.1",
   "compatibleCoreVersion": "11",
   "compatibility": {
     "minimum": "10",
@@ -11,13 +11,8 @@
   },
   "templateVersion": 2,
   "authors": [
-    {
-      "name": "OctarineSourceror",
-      "discord": "octarinesorcerer"
-    },
-    { "name": "cybersmily" },
-    { "name": "drowzero0" },
-    { "name": "rostish1521" }
+    { "name": "rostish1521" },
+    { "name": "darkneet69" }
   ],
   "scripts": [],
   "esmodules": ["module/cyberpunk2020.js"],

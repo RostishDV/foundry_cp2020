@@ -359,7 +359,8 @@ export class CyberpunkItem extends Item {
       .addRoll(new Roll(`${DC}`), {name: localize("ToHit")})
       .addRoll(attackRoll, {name: localize("Attack")})
       .addRoll(damageRoll, {name: localize("Damage")})
-      .addRoll(locationRoll.roll, {name: localize("Location"), flavor: locationRoll.areaHit });
+      .addRoll(locationRoll.roll, {name: localize("Location"), flavor: locationRoll.areaHit })
+      .addRoll(locationRoll.subRoll, {name: "Sub location", flavor: locationRoll.subArea });
     bigRoll.defaultExecute({img:this.img});
     return bigRoll;
   }

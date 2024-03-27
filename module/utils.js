@@ -44,9 +44,11 @@ export async function rollLocation(targetActor, targetArea) {
         const hitLocs = (!!targetActor) ? targetActor.hitLocations : defaultHitLocations();
         const targetNum = hitLocs[targetArea].location[0];
         let roll = await new Roll(`${targetNum}`).evaluate();
+        let subRoll = await new Roll("1d6").evaluate();
         return {
             roll: roll,
             areaHit: targetArea,
+            subRoll: subRoll,
             subArea: subAreas[targetArea][subRoll.total]
         };
     }
@@ -57,6 +59,7 @@ export async function rollLocation(targetActor, targetArea) {
     return {
         roll: roll,
         areaHit: hitArea,
+        subRoll: subRoll,
         subArea: subAreas[hitArea][subRoll.total]
     };
 }
