@@ -1,0 +1,19 @@
+.stat-main-frame {
+	display: flex;
+	flex-direction: row;
+}
+
+.stat-topic {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.stat-group-caption {
+	display: inherit;
+	width: 2em;
+	flex-grow: 1;
+	flex-shrink: 1;
+	font-weight: bold;
+	border: 0 none;
+}

@@ -16,7 +16,7 @@
   ],
   "scripts": [],
   "esmodules": ["module/cyberpunk2020.js"],
-  "styles": ["css/cyberpunk2020.css"],
+  "styles": ["css/cyberpunk2020.css", "css/override.css"],
   "packs": [
     {
       "name": "roll-tables",
