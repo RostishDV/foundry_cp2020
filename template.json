@@ -1,8 +1,7 @@
 {
 	"Actor": {
 		"types": [
-			"character", 
-			"npc"
+			"character", "npc"
 		],
 		"templates": {
 			"stats": {
@@ -338,7 +337,7 @@
 						"ip": 0,
 						"chipped": false,
 						"isSpecial": true,
-						"stat": "int"
+						"stat": ""
 					},
 					"Language": {
 						"group": true
@@ -704,95 +703,35 @@
 					"Head": {
 						"location": [
 							1
-						],
-						
-						"sp": 0,
-						"sdp": 0,
-						"penaly": 0
+						]
 					},
 					"Torso": {
 						"location": [
 							2,
-							3,
 							4
-						],
-						"sublocation": {
-							"1": "Shoulder",
-							"2": "",
-							"3": "",
-							"4": "",
-							"5": "",
-							"6": ""
-						},
-						"sp": 0,
-						"sdp": 0,
-						"penaly": 0
+						]
 					},
 					"lArm": {
 						"location": [
 							6
-						],
-						"sublocation": {
-							"1": "Shoulder",
-							"2": "",
-							"3": "",
-							"4": "",
-							"5": "",
-							"6": ""
-						},
-						"sp": 0,
-						"sdp": 0,
-						"penaly": 0
+						]
 					},
 					"rArm": {
 						"location": [
 							5
-						],
-						"sublocation": {
-							"1": "Shoulder",
-							"2": "",
-							"3": "",
-							"4": "",
-							"5": "",
-							"6": ""
-						},
-						"sp": 0,
-						"sdp": 0,
-						"penaly": 0
+						]
 					},
 					"lLeg": {
 						"location": [
 							7,
 							8
-						],
-						"sublocation": {
-							"1": "Shoulder",
-							"2": "",
-							"3": "",
-							"4": "",
-							"5": "",
-							"6": ""
-						},
-						"sp": 0,
-						"sdp": 0,
-						"penaly": 0
+						]
 					},
 					"rLeg": {
 						"location": [
 							9,
 							10
-						],
-						"sublocation": {
-							"1": "Shoulder",
-							"2": "",
-							"3": "",
-							"4": "",
-							"5": "",
-							"6": ""
-						},
-						"sp": 0,
-						"sdp": 0,
-						"penaly": 0
+						]
 					}
 				}
 			},

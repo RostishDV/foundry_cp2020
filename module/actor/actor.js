@@ -58,6 +58,7 @@ export class CyberpunkActor extends Actor {
     system.hitLocLookup = {};
     for(const hitLoc in system.hitLocations) {
       let area = system.hitLocations[hitLoc]
+      area.stoppingPower = 0;
       let [start, end] = area.location;
       // Just one die number that'll hit the location
       if(!end) {
@@ -106,7 +107,7 @@ export class CyberpunkActor extends Actor {
     system.carryWeight = 0;
     equippedItems.forEach(item => {
       let weight = item.system.weight || 0;
-      system.carryWeight += parseFloat(weight);
+      system.carryWeight += weight;
     });
 
     // Apply wound effects
@@ -203,7 +204,7 @@ export class CyberpunkActor extends Actor {
     let data = skill.system || skill;
     let value = data.level;
     if(data.isChipped) {
-      value = data.chipLevel || 0;
+      value = data.chipValue || 0;
     }
     return value;
   }
@@ -244,20 +245,16 @@ export class CyberpunkActor extends Actor {
     roll.defaultExecute();
   }
 
-  /*
-   * Adds this actor to the current encounter - if there isn't one, this just shows an error - and rolls their initiative
-   */
-  async addToCombatAndRollInitiative(options = {createCombatants: true}) {
-    if(!game.combat) {
-      ui.notifications.error(localize("NoCombatError"));
-      return;
-    }
-
-    // This... doesn't seem to actually roll the iniative, and the docs aren't telling in how to make this function do so
-    // So for now, we're going to have to add them to the combat, then ask the combat very nicely to roll this actor please
-    return this.rollInitiative(options = options).then( (combat) => {
-      combat.rollInitiative([combat.getCombatantByActor(this).id]);
-    });
+  rollInitiative() {
+    // TODO: Get this actually working with the initiative tracker
+    // let activeCombat = game.combats.active;
+    // if(activeCombat !== undefined) {
+    //   activeCombat.rollInitiative(this.id);
+    //   return;
+    // }
+    let roll = new Multiroll(`${this.name} ${localize("Initiative")}`, localize("InitiativeTrackerWarning"))
+      .addRoll(makeD10Roll(["@stats.ref.total","@skills.CombatSense.value"], this.system));
+    roll.defaultExecute();
   }
 
   rollStunDeath() {
