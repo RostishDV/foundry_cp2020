@@ -1,4 +1,4 @@
-import { defaultAreaLookup, defaultHitLocations, subAreas } from "./lookups.js"
+import { defaultAreaLookup, defaultHitLocations } from "./lookups.js"
 // Utility methods that don't really belong anywhere else
 
 export function properCase(str) {
@@ -46,18 +46,16 @@ export async function rollLocation(targetActor, targetArea) {
         let roll = await new Roll(`${targetNum}`).evaluate();
         return {
             roll: roll,
-            areaHit: targetArea,
-            subArea: subAreas[targetArea][subRoll.total]
+            areaHit: targetArea
         };
     }
     // Number to area name lookup
+    let hitAreaLookup = (!!targetActor && !!targetActor.hitLocLookup) ? targetActor.hitLocLookup : defaultAreaLookup;
+
     let roll = await new Roll("1d10").evaluate();
-    let hitArea = defaultAreaLookup[roll.total];
-    let subRoll = await new Roll("1d6").evaluate();
     return {
         roll: roll,
-        areaHit: hitArea,
-        subArea: subAreas[hitArea][subRoll.total]
+        areaHit: hitAreaLookup[roll.total]
     };
 }
 

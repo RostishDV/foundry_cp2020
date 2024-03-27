@@ -19,7 +19,7 @@ export let attackSkills = {
     // Trained martial arts get added in item-sheet for now
     "Melee": ["Fencing", "Melee", "Brawling"],
     // No limitations for exotic, go nuts
-    "Exotic": ["Handgun", "Submachinegun", "Rifle", "HeavyWeapons", "Fencing", "Melee", "Brawling", "Archery"]
+    "Exotic": []
 }
 
 export function getStatNames() {
@@ -131,56 +131,6 @@ rangeResolve[ranges.extreme] = range => range*2;
 export { rangeDCs, rangeResolve }
 
 export let defaultTargetLocations = ["Head", "Torso", "lArm", "rArm", "lLeg", "rLeg"]
-export let subAreas = {
-    "Head": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
-    },
-    "Torso": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
-    },
-    "lArm": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
-    },
-    "rArm": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
-    },
-    "lLeg": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
-    },
-    "rLeg": {
-        1: "Shoulder",
-        2: "",
-        3: "",
-        4: "",
-        5: "",
-        6: ""
-    }
-}
 export let defaultAreaLookup = {
     1: "Head",
     2: "Torso",
